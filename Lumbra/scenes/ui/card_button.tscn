@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/card_button.gd" id="1"]
+
+[node name="CardButton" type="Button"]
+custom_minimum_size = Vector2(120, 58)
+toggle_mode = true
+text = "Card"
+script = ExtResource("1")

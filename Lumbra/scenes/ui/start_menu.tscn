@@ -1,0 +1,164 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1"]
+
+[sub_resource type="Gradient" id="GlowGradient"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(1, 0.72, 0.28, 0.45, 1, 0.6, 0.2, 0.14, 1, 0.5, 0.15, 0)
+
+[sub_resource type="GradientTexture2D" id="GlowTexture"]
+gradient = SubResource("GlowGradient")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="StartMenu" type="CanvasLayer"]
+layer = 40
+script = ExtResource("1")
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPage" type="VBoxContainer" parent="Center"]
+unique_name_in_owner = true
+theme_override_constants/separation = 14
+
+[node name="TitleBox" type="MarginContainer" parent="Center/MainPage"]
+custom_minimum_size = Vector2(760, 200)
+
+[node name="TitleGlow" type="TextureRect" parent="Center/MainPage/TitleBox"]
+unique_name_in_owner = true
+texture = SubResource("GlowTexture")
+expand_mode = 1
+
+[node name="TitleLabel" type="Label" parent="Center/MainPage/TitleBox"]
+unique_name_in_owner = true
+theme_override_colors/font_color = Color(1, 0.93, 0.62, 1)
+theme_override_font_sizes/font_size = 104
+text = "LUMBRA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/MainPage"]
+theme_override_colors/font_color = Color(0.78, 0.72, 0.95, 1)
+theme_override_font_sizes/font_size = 20
+text = "a game of light and shadow"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/MainPage"]
+custom_minimum_size = Vector2(0, 28)
+
+[node name="PlayButton" type="Button" parent="Center/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 58)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="RulesButton" type="Button" parent="Center/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 58)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Rules"
+
+[node name="OptionsButton" type="Button" parent="Center/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 58)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Center/MainPage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 58)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="RulesPage" type="PanelContainer" parent="Center"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(680, 560)
+
+[node name="Margin" type="MarginContainer" parent="Center/RulesPage"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Center/RulesPage/Margin"]
+theme_override_constants/separation = 14
+
+[node name="Heading" type="Label" parent="Center/RulesPage/Margin/VBox"]
+theme_override_font_sizes/font_size = 36
+text = "Rules"
+
+[node name="RulesText" type="RichTextLabel" parent="Center/RulesPage/Margin/VBox"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 17
+bbcode_enabled = true
+text = "Rules"
+
+[node name="RulesBack" type="Button" parent="Center/RulesPage/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 48)
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 20
+text = "Back"
+
+[node name="OptionsPage" type="PanelContainer" parent="Center"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(520, 0)
+
+[node name="Margin" type="MarginContainer" parent="Center/OptionsPage"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Center/OptionsPage/Margin"]
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="Center/OptionsPage/Margin/VBox"]
+theme_override_font_sizes/font_size = 36
+text = "Options"
+
+[node name="FullscreenCheck" type="CheckButton" parent="Center/OptionsPage/Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Fullscreen"
+
+[node name="EffectsCheck" type="CheckButton" parent="Center/OptionsPage/Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Screen effects (vignette, film grain)"
+
+[node name="AnimationsCheck" type="CheckButton" parent="Center/OptionsPage/Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Piece animations"
+
+[node name="SoundCheck" type="CheckButton" parent="Center/OptionsPage/Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Sound effects"
+
+[node name="MusicCheck" type="CheckButton" parent="Center/OptionsPage/Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 20
+text = "Ambient sound"
+
+[node name="OptionsBack" type="Button" parent="Center/OptionsPage/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 48)
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 20
+text = "Back"

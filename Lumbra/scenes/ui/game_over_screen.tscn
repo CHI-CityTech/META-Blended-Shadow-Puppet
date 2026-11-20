@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over_screen.gd" id="1"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+layer = 30
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.94)
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+theme_override_constants/separation = 14
+
+[node name="GlyphLabel" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 80
+text = "☼"
+horizontal_alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 48
+text = "Winner"
+horizontal_alignment = 1
+
+[node name="ReasonLabel" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(560, 0)
+theme_override_font_sizes/font_size = 18
+text = "Reason"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StatsLabel" type="Label" parent="Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(560, 0)
+theme_override_font_sizes/font_size = 14
+text = "Stats"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Center/VBox"]
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="ReplayButton" type="Button" parent="Center/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 52)
+text = "Replay"
+
+[node name="ViewBoardButton" type="Button" parent="Center/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 52)
+text = "View final board"

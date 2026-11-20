@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/board/board_view.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/board/tile_layer.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/board/beam_layer.gd" id="3"]
+[ext_resource type="Shader" path="res://shaders/beam.gdshader" id="4"]
+[ext_resource type="Script" path="res://scripts/board/hit_marker_layer.gd" id="5"]
+
+[sub_resource type="ShaderMaterial" id="BeamMaterial"]
+shader = ExtResource("4")
+
+[node name="BoardView" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Tiles" type="Node2D" parent="."]
+script = ExtResource("2")
+
+[node name="Beams" type="Node2D" parent="."]
+material = SubResource("BeamMaterial")
+script = ExtResource("3")
+
+[node name="HitMarkers" type="Node2D" parent="."]
+script = ExtResource("5")
+
+[node name="Units" type="Node2D" parent="."]
+
+[node name="Preview" type="Node2D" parent="."]

@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1"]
+
+[node name="HUD" type="PanelContainer"]
+offset_left = 780.0
+offset_top = 24.0
+offset_right = 1250.0
+offset_bottom = 696.0
+script = ExtResource("1")
+
+[node name="Margin" type="MarginContainer" parent="."]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+theme_override_constants/separation = 12
+
+[node name="TurnLabel" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 26
+text = "Turn"
+
+[node name="StatsLabel" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+theme_override_font_sizes/font_size = 15
+text = "Stats"
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/VBox"]
+
+[node name="DrawButton" type="Button" parent="Margin/VBox/Buttons"]
+unique_name_in_owner = true
+text = "Draw card"
+
+[node name="RotateButton" type="Button" parent="Margin/VBox/Buttons"]
+unique_name_in_owner = true
+toggle_mode = true
+text = "Rotate unit"
+
+[node name="FacingButton" type="Button" parent="Margin/VBox/Buttons"]
+unique_name_in_owner = true
+text = "Facing ↑"
+
+[node name="Hand" type="HFlowContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+
+[node name="MessageLabel" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(430, 0)
+theme_override_font_sizes/font_size = 16
+text = "Message"
+autowrap_mode = 3
+
+[node name="GameButtons" type="HBoxContainer" parent="Margin/VBox"]
+
+[node name="NewGameButton" type="Button" parent="Margin/VBox/GameButtons"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "New game"
+
+[node name="MenuButton" type="Button" parent="Margin/VBox/GameButtons"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Menu"
+
+[node name="RulesSeparator" type="HSeparator" parent="Margin/VBox"]
+
+[node name="RulesLabel" type="RichTextLabel" parent="Margin/VBox"]
+unique_name_in_owner = true
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+bbcode_enabled = true
+text = "Rules"
